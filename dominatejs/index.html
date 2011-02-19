@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="presentation">
+<head>
+    <meta charset="utf-8">
+    <title>PosterSession Demo</title>
+    <script type="text/javascript" src="../postersession.min.js"></script>
+    <link rel="stylesheet" media="screen" href="../postersession.min.css" />
+</head>
+<body class="presentation">
+    <ol>
+        <li class="centered">
+            <h1>Web Performance Domination</h1>
+            <h3>because we can (and should?)</h3>
+        </li>
+        <li class="">
+            <h1>The problem</h1>
+            <p>JavaScripts (when in great numbers) kill your website's load time!</p>
+        </li>
+        <li>
+            <h1>Some history</h1>
+                <p>2008: Steve Souders proposes async script loading (<a href="http://www.stevesouders.com/blog/2008/12/27/coupling-async-scripts/">stevesouders.com</a>)</p>
+        </li>
+        <li>
+            <h1>Some more history</h1>
+            <p>2010: Stoyan Stefanov proposes solution for pre-caching JavaScript without executing it (<a href="http://www.phpied.com/preload-cssjavascript-without-execution/">phpied.com</a>)</p>
+        </li>
+        <li>
+            <h1>The solution, in theory</h1>
+            <ol>
+                <li>Pre-cache JavaScripts asynchronously</li>
+                <li>Execute scripts in sequence (preferrably after window.onload)</li>
+                <li>Scripts not blocking == fastness?</li>
+            </ol>
+        </li>
+        <li>
+            <h1>Today</h1>
+            <p>Several libraries now exist to (almost) solve this:</p>
+            <ul>
+                <li>LABjs (<a href="http://labjs.com">labjs.com</a>) (Twitter uses this)</li>
+                <li>Headjs (<a href="http://headjs.com">headjs.com</a>)</li>
+                <li>ControlJS (<a href="http://stevesouders.com/controljs/">stevesouders.com</a>)</li>
+            </ul>
+        </li>
+        <li>
+            <h1>That's great, but..</h1>
+            <p>Why don't we just blindly load all JavaScripts asynchronously, execute them synchronously and call it a day?</p>
+        </li>
+        <li>
+            <h1>Web sites are funny</h1>
+            <p>If we execute scripts after load...</p>
+            <ul>
+
+                <li>Scripts will never hear load events</li>
+                <li>Document.write will destroy the page if called late</li>
+
+            </ul>
+        </li>
+        <li>
+            <h1>DominateJS</h1>
+            <ul>
+                <li>Started as fork of Steve Souders ControlJS</li>
+                <li>Designed to "blindly" optimize ALL JavaScripts on page</li>
+                <li>Goes all the way across the sky</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Load, DOMContentLoaded, readyState</h1>
+            <p>DominateJS overrides native DOM methods to ensure that all 'load' handlers get fired eventually.</p>
+        </li>
+        <li>
+            <h1>The document.write menace</h1>
+            <p>We slapped a JavaScript HTML parser (<a href="https://github.com/tautologistics/node-htmlparser">github.com</a>) on the top. Purrs like a toad.</p>
+        </li>
+        <li>
+            <h1>Current status</h1>
+            <ul>
+                <li>A lot of pages actually work great (and rez faster)!</li>
+                <li>Learning a lot about the DOM (shudder)!</li>
+                <li>Complex Google Ads almost working great ;)</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Fork it on Github</h1>
+            <p>Let's make the internet faster! (<a href="http://github.com/cdata/dominatejs">github.com</a>)</p>
+        </li>
+        <li class="centered">
+            <h1>fin</h1>
+        </li>
+    </ol>
+</body>
+</html>
