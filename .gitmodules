@@ -1,0 +1,3 @@
+[submodule "postersession"]
+	path = postersession
+	url = http://github.com/cdata/postersession.git

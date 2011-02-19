@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>DominateJS</title>
-    <script type="text/javascript" src="/presentations/postersession.min.js"></script>
-    <link rel="stylesheet" media="screen" href="/presentations/postersession.min.css" />
+    <script type="text/javascript" src="/presentations/postersession/dist/postersession.min.js"></script>
+    <link rel="stylesheet" media="screen" href="/presentations/postersession/dist/postersession.min.css" />
 </head>
 <body class="presentation">
     <ol>
@@ -12,7 +12,7 @@
             <h1>Web Performance Domination</h1>
             <h3>because we can (and should?)</h3>
         </li>
-        <li class="">
+        <li>
             <h1>The problem</h1>
             <p>JavaScripts (when in great numbers) kill your website's load time!</p>
         </li>
@@ -52,7 +52,7 @@
 
                 <li>Scripts will never hear load events</li>
                 <li>Document.write will destroy the page if called late</li>
-
+                <li>Besides destroying your page, Document.write has weird rules</li>
             </ul>
         </li>
         <li>
@@ -62,6 +62,10 @@
                 <li>Designed to "blindly" optimize ALL JavaScripts on page</li>
                 <li>Goes all the way across the sky</li>
             </ul>
+        </li>
+        <li class="centered">
+            <h1>Demo time</h1>
+            <img src="/presentations/dominatejs/domination.png" />
         </li>
         <li>
             <h1>Load, DOMContentLoaded, readyState</h1>
@@ -84,7 +88,7 @@
             <p>Let's make the internet faster! (<a href="http://github.com/cdata/dominatejs">github.com</a>)</p>
         </li>
         <li class="centered">
-            <h1>fin</h1>
+            <h1>Fin</h1>
         </li>
     </ol>
 </body>
