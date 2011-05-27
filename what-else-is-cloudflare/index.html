@@ -64,19 +64,18 @@
         </li>
         <li>
             <h1>Case study: JavaScript</h1>
-            <p>The challenge: optimize JavaScript. Everywhere. Automatically.</p>
+            <p>The challenge: optimize JavaScript loading. Everywhere. Automatically.</p>
         </li>
         <li>
             <h1>Who knows the best way to do this?</h1>
         </li>
         <li>
             <h1>Best case scenario</h1>
-            <ul>
+            <ol>
                 <li>There is only one script</li>
                 <li>The script does not block anything and executes late</li>
                 <li>The script is always cached always (except when it shouldn't be)</li>
-                <li>The script contents looks like: ""</li>
-            </ul>
+            </ol>
         </li>
         <li>
             <h1>We built a tool that makes this happen</h1>
@@ -90,6 +89,9 @@
                 <li>Surely our arch nemesis document.write has something to say about this!</li>
             </ul>
         </li>
+        <li>
+            <h1>Part 1: Merging all scripts safely</h1>
+        <li>
         <li>
             <h1>It starts on the server</h1>
             <ul>
@@ -152,6 +154,9 @@ return bleh;
             <p>but for JavaScript</p>
         </li>
         <li>
+            <h1>Part 2: Caching</h1>
+        </li>
+        <li>
             <h1>Rocket Loader does caching</h1>
             <ul>
                 <li>Scripts are cached individually in local storage</li>
@@ -163,9 +168,10 @@ return bleh;
             <h1>The best part</h1>
             <p><b>Zero</b> round trips when cache is hot</p>
         </li>
-
+        <li>
+            <h1>Part 3: The Arch Nemesis</h1>
+        </li>
         <li>Jason's slides start here</li>
-
         <li>
             <h1>Doubling speed of TechCrunch</h1>
         </li>
