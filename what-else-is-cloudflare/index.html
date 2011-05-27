@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="presentation">
+<head>
+    <meta charset="utf-8">
+    <title>What is CloudFlare?</title>
+    <script type="text/javascript" src="../postersession/dist/postersession.min.js"></script>
+    <link rel="stylesheet" media="screen" href="../postersession/dist/postersession.min.css" />
+</head>
+<body class="presentation">
+    <ol>
+        <li class="centered">
+            
+            <img src="../images/cloudflare.png" />
+            <h1>CloudWhat?</h1>
+        </li>
+        <li>
+            <h1>A practical explanation</h1>
+            <p>CloudFlare is a network of websites</p>
+        </li>
+        <li>
+            <h1>How many websites?</h1>
+            <ul>
+                <li>Almost 17,000 websites</li>
+                <li>A true cross section of the internet</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Another perspective</h1>
+            <p>We are a small, scrappy team of engineers working to make the internet better</p>
+        </li>
+        <li>
+            <h1>What do engineers do at CloudFlare?</h1>
+        </li>
+        <li>
+            <h1>We build infrastructure.</h1>
+            <ul>
+                <li>Global CDN</li>
+                <li>Web Applcation Firewall</li>
+            </ul>
+        </li>
+        <li>
+            <h1>We build features</h1>
+            <ul>
+                <li>Analytics</li>
+                <li>Threat control</li>
+                <li>DNS management</li>
+            </ul>
+        </li>
+        <li>
+            <h1>We build enhacements</h1>
+            <ul>
+                <li>Auto-minification</li>
+                <li>Email obfuscation</li>
+                <li>Auto-magic Asset optimization</li>
+            </ul>
+        </li>
+        <li>
+            <h1>We deploy everywhere</h1>
+            <ul>
+                <li>Every kind of site</li>
+                <li>Every kind of device</li>
+                <li>Everywhere on Earth</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Case study: JavaScript</h1>
+            <p>The challenge: optimize JavaScript. Everywhere. Automatically.</p>
+        </li>
+        <li>
+            <h1>Who knows the best way to do this?</h1>
+        </li>
+        <li>
+            <h1>Best case scenario</h1>
+            <ul>
+                <li>There is only one script</li>
+                <li>The script does not block anything and executes late</li>
+                <li>The script is always cached always (except when it shouldn't be)</li>
+                <li>The script contents looks like: ""</li>
+            </ul>
+        </li>
+        <li>
+            <h1>We built a tool that makes this happen</h1>
+            <p>Automaticaly, on any website.</p>
+        </li>
+        <li>
+            <h1>But this is crazy</h1>
+            <ul>
+                <li>How do you merge all scripts safely?</li>
+                <li>How do you cache things?</li>
+                <li>Surely our arch nemesis document.write has something to say about this!</li>
+            </ul>
+        </li>
+        <li>
+            <h1>It starts on the server</h1>
+            <ul>
+                <li>All documents are parsed for script tags on the fly</li>
+                <li>Script tags are re-written to prevent loading and execution</li>
+                <li>&lt;script type="text/javascript"&gt;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&lt;script type="text/noexec"&gt;</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Our hero: Rocket Loader</h1>
+            <ul>
+                <li>Loads early and asynchronously on the page</li>
+                <li>Gathers all external URLs (even cross-domain ones)</li>
+                <li>Makes a single AJAX request to the server for all script contents</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Server-side script proxy</h1>
+            <ul>
+                <li>Sends a multipart response to the client</li>
+                <li>All scripts flushed asynchronously as they arrive</li>
+            </ul>
+        </li>
+        <li>
+            <h2>Content-Type: multipart/bag;</h2>
+            <pre>
+--foobar
+Bag: 257|222|-1|200|text/bag-manifest
+
+0:http://www.leangreenmonkey.info/small1.js
+1:http://www.leangreenmonkey.info/small3.js
+2:http://www.leangreenmonkey.info/small2.js
+
+--foobar
+Bag: 79|39|0|200|application/x-javascript|7200
+
+function small1(bleh) {
+return bleh;
+}
+
+--foobar
+Bag: 79|39|2|200|application/x-javascript|7200
+
+function small2(bleh) {
+return bleh;
+}
+
+--foobar
+Bag: 79|39|1|200|application/x-javascript|7200
+
+function small3(bleh) {
+return bleh;
+}
+
+--foobar--                
+            </pre>
+        </li>
+        <li>
+            <h1>Think BigPipe</h1>
+            <p>but for JavaScript</p>
+        </li>
+        <li>
+            <h1>Rocket Loader does caching</h1>
+            <ul>
+                <li>Scripts are cached individually in local storage</li>
+                <li>Purging and "TTL" built-in to the library</li>
+                <li>Smart fallbacks for older browsers</li>
+            </ul>
+        </li>
+        <li>
+            <h1>The best part</h1>
+            <p><b>Zero</b> round trips when cache is hot</p>
+        </li>
+
+        <li>Jason's slides start here</li>
+
+        <li>
+            <h1>Doubling speed of TechCrunch</h1>
+        </li>
+        <li class="centered">
+            <iframe src="http://player.vimeo.com/video/24293160?title=0&amp;byline=0&amp;portrait=0" width="400" height="168" frameborder="0"></iframe>
+        </li>
+        <li class="centered">
+            <iframe src="http://player.vimeo.com/video/24293338?title=0&amp;byline=0&amp;portrait=0" width="400" height="170" frameborder="0"></iframe>
+        </li>
+        <li class="centered">
+            <iframe src="http://player.vimeo.com/video/24293209?title=0&amp;byline=0&amp;portrait=0" width="400" height="168" frameborder="0"></iframe>
+        </li>
+        <li>
+            <h1>We deployed that tool</h1>
+            <p>One week later 1,000 websites are automatically optimized</p>
+        </li>
+        <li>
+            <h1>With one click</h1>
+            <p>you accidentally all your problems</p>
+        </li>
+        <li>
+            <h1>This is CloudFlare</h1>
+            <ul>
+                <li>A vast network of websites</li>
+                <li>A great team of people</li>
+                <li>An exciting engineering challenge</li>
+            </ul>
+        </li>
+        <li>
+            <p>http://www.cloudflare.com</p>
+            <p>chris@cloudflare.com</p>
+            <p>jason@cloudflare.com</p>
+            <img style='position: absolute; top: 0px; right: 0px;' src='../images/domination.png' />
+        </li>
+    </ol>
+</body>
+</html>
