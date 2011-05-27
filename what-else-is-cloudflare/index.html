@@ -5,6 +5,20 @@
     <title>What is CloudFlare?</title>
     <script type="text/javascript" src="../postersession/dist/postersession.min.js"></script>
     <link rel="stylesheet" media="screen" href="../postersession/dist/postersession.min.css" />
+<style>
+    b {
+        font-weight: bold;
+    }
+    i {
+        font-weight: bold;
+    }
+    pre.code {
+        font-size: 145%;
+        font-family: Monaco, "Courier New", serif;
+        font-weight: bold;
+        line-height: 30px;
+    }
+</style>
 </head>
 <body class="presentation">
     <ol>
@@ -169,11 +183,63 @@ return bleh;
             <p><b>Zero</b> round trips when cache is hot</p>
         </li>
         <li>
-            <h1>Part 3: The Arch Nemesis</h1>
+            <h1>Part 3: The Arch-nemesis of Non-Blocking Javascript</h1>
         </li>
-        <li>Jason's slides start here</li>
+        <li><p>document.write</p></li>
         <li>
-            <h1>Doubling speed of TechCrunch</h1>
+            <h1>document.write</h1>
+            <pre class="code">
+&lt;body onload="document.write('&lt;h2&gt;World: Nice to meet you.&lt;/h2&gt;')"&gt;
+    &lt;h1&gt;Hello, world.&lt;/h1&gt;
+&lt;/body&gt;
+            </pre>
+        </li>
+        <li>
+            <h1>document.write(string)</h1>
+            <p>Insert <b>string</b> into the parser input buffer, unless the page is loaded.</p>
+            <p>If the page is loaded, navigate to <i>about:blank</i>, then insert <b>string</b> into the parser input stream.</p>
+        </li>
+        <li>
+            <h1>document.write</h1>
+            <pre class="code">
+    &lt;script type='text/javascript' src='./google_service.js'&gt;&lt;/script&gt;
+    &lt;script type='text/javascript'&gt;
+        GA_googleFetchAds();
+    &lt;/script&gt;
+
+            </pre>
+        </li>
+        <li>
+            <h1>document.write</h1>
+            <pre class="code">
+    &lt;p&gt;
+        &lt;script type="text/javascript"&gt; 
+            document.write('&lt;span&gt;Line 1&lt;/span&gt;');
+            document.write('&lt;div&gt;Line 2&lt;/div&gt;');
+        &lt;/script&gt;
+    &lt;/p&gt; 
+            </pre>
+        </li>
+        <li>
+            <h1>document.write</h1>
+            <pre class="code">
+    &lt;script type="text/javascript"&gt; 
+        document.write('&lt;script&gt;document.write("&lt;p&gt;a");&lt;\/script&gt;');
+        document.write('a &lt;/p&gt;');
+    &lt;/script&gt; 
+            </pre>
+        </li>
+        <li>
+            <h1>... so I put a Browser in your Browser</h1>
+            <ul>
+                <li>Javascript Semantics-aware Peeking HTML Parser</li>
+                <li>Javascript Javascript Execution Frames</li>
+                <li>Javascript Browser Simulator</li>
+                <li>... in 20kb</li>
+            </ul>
+        </li>
+        <li>
+            <h1>Doubling Speed of TechCrunch</h1>
         </li>
         <li class="centered">
             <iframe src="http://player.vimeo.com/video/24293160?title=0&amp;byline=0&amp;portrait=0" width="400" height="168" frameborder="0"></iframe>
