@@ -22,7 +22,7 @@
             <ol>
                 <li>Some guy builds site with jQuery from JavaScript CDN Inc.</li>
                 <li>User visits that site and downloads jQuery</li>
-                <li>You use jQuery from JavaScript CDN Inc.</li>
+                <li>You build site with jQuery from JavaScript CDN Inc.</li>
                 <li>User visits your site and doesn't have to re-download jQuery</li>
                 <li>Profit (literally)!</li>
             </ol>
@@ -92,12 +92,32 @@
         </li>
         <li>
             <h1>CDNJS is powered by CloudFlare</h1>
-            <p>We are dedicated to providing CDNJS with hosting across our own content delivery network, with 14 locations globally and growing.</p>
+            <p>We are dedicated to providing CDNJS with hosting across our own content delivery network, with 12 locations globally and growing.</p>
             <img src="../images/cloudflare.png" alt="CloudFlare" />
         </li>
         <li>
             <h1>CDNJS is fast, everywhere, always</h1>
-            <p>And it probably contains a library you're using, so consider it for your next project!<p>
+            <p>Informal tests suggest up to twice as fast as Google's JavaScript CDN!</p>
+            <pre>
+$ ping ajax.googleapis.com
+PING googleapis.l.google.com (74.125.67.95): 56 data bytes
+
+--- googleapis.l.google.com ping statistics ---
+6 packets transmitted, 6 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 99.309/101.450/104.159/1.788 ms
+
+
+$ ping cdnjs.cloudflare.com
+PING cdnjs.cloudflare.com.cdn.cloudflare.net (199.27.134.101): 56 data bytes
+
+--- cdnjs.cloudflare.com.cdn.cloudflare.net ping statistics ---
+6 packets transmitted, 6 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 39.537/49.456/61.345/7.041 ms
+            </pre>
+        </li>
+        <li>
+            <h1>The bottom line</h1>
+            <p>CDNJS probably contains a library you're using, so consider it for your next project!<p>
         </li>
         <li>
             <h1>CDNJS</h1>
